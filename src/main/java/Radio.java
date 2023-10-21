@@ -21,25 +21,30 @@ public class Radio {
     }
 
     public void setCurrentVolume(int newCurrentVolume) {
-
+//        if (newCurrentVolume > 10) {
+//            return;
+//        }
+//        if (newCurrentVolume < 0) {
+//            return;
+//        }
         currentVolume = newCurrentVolume;
     }
 
 
-    public void volumeUp() {  // + 1 громкость.
-        if (currentVolume < 100) {
+    public void volumeUp() {
+        if (currentVolume < 10) {
             currentVolume = currentVolume + 1;
         }
     }
 
-    public void volumeDown() {  // -1 громкость
+    public void volumeDown() {
         if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
         }
     }
 
 
-    public void next() {  //сл.станция
+    public void next() {
         if (currentRadioStation < 9) {
             currentRadioStation = currentRadioStation + 1;
         } else {
@@ -47,7 +52,7 @@ public class Radio {
         }
     }
 
-    public void prev() {  // прошлая станция
+    public void prev() {               
         if (currentRadioStation > 0) {
             currentRadioStation = currentRadioStation - 1;
         } else {
@@ -55,4 +60,3 @@ public class Radio {
         }
     }
 }
-
